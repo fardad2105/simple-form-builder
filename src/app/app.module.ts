@@ -3,16 +3,28 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { EditAppComponent } from './components/edit-app/edit-app.component';
+import { FormFieldsComponent } from './components/form-fields/form-fields.component';
+import { DndModule } from 'ngx-drag-drop';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EditAppComponent,
+    FormFieldsComponent
+    // LayoutComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+
+    // Modules
+    FormsModule,
+    DndModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

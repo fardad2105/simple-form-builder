@@ -1,0 +1,8 @@
+<div class="fields" *ngFor="let item of fieldModels">
+  <div class="field pointer shadow-bg" [dndDraggable]="item"
+  [dndEffectAllowed]="'copy'" 
+  (dndEnd)="onDragEnd($event)">
+    <i [ngClass]="item.icon" class="fa pull-right text-danger"></i>
+    <h5>{{item.label}}</h5>
+  </div>
+</div>
