@@ -1,6 +1,8 @@
 # SimpleFormBuilder
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.
+in this project, in first Step I create the form field and form section,and we can generate <br/>
+new Form with drag&drap elements into form section 
 
 ## Development server
 
