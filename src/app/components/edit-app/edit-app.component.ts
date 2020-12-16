@@ -3,6 +3,7 @@ import { DndDropEvent, DropEffect} from 'ngx-drag-drop';
 import { field, value } from '../../../data/FieldsModel';
 import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
+import { User } from 'src/data/User';
 @Component({
   selector: 'app-edit-app',
   templateUrl: './edit-app.component.html',
@@ -16,6 +17,7 @@ export class EditAppComponent implements OnInit {
   };
   success = false;
   show = 0;
+  currentUser: User;
 
   modelFields: Array<field> = [];
   model: any = {
@@ -37,7 +39,8 @@ export class EditAppComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
+    this.currentUser = JSON.parse(localStorage.getItem('user'));
+    console.log('currentUser',this.currentUser);
   }
 
   onDragStart(event: DragEvent): void{

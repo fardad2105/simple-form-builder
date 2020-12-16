@@ -36,15 +36,12 @@
         [dndEffectAllowed]="'all'" 
         [dndDraggable]="item">
         <div class="row form-group">
-          <div class="col-4">
+          <div class="col-4" *ngIf="currentUser.role === 'Admin'">
             <i *ngIf="item.toggle" (click)="item.toggle=false" class="fa fa-chevron-up float-left"></i>
             <i *ngIf="!item.toggle" (click)="item.toggle=true" class="fa fa-chevron-down float-left"></i>
             <i (click)="removeField(i)" class="fa fa-trash float-left"></i>
           </div>
-          <div class="col-7">
-            <!-- <i [ngClass]="item.icon" class="fa pull-left"></i>
-            <h5>{{item.label}}
-            <span *ngIf="item.required" class="red">*</span></h5> -->
+          <div [ngClass]="currentUser.role === 'Admin'? 'col-7':'col-10'">
                   <div *ngIf="item.type=='text'">
                     <label>{{item.label}}</label> <label *ngIf="item.required" class="text-danger">*</label>
                     <input type="text" class="form-control" id="{{item.name}}" placeholder="{{item.placeholder}}" >
